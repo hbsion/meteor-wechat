@@ -20,7 +20,7 @@ Package.onUse(function(api) {
     'zimme:collection-timestampable@1.0.6'
   ]);
   api.use([
-    'templating'
+    'templating@1.0.9'
   ], 'client');
   api.export('WechatJs', 'server');
   api.export('WechatTokens', 'server');
@@ -35,14 +35,14 @@ Package.onUse(function(api) {
 });
 
 Package.onTest(function(api) {
-  // api.use('ecmascript');
-  // api.use('tinytest');
-  // api.use('hbsion:wechat');
+  api.use('ecmascript');
+  api.use('tinytest');
+  api.use('hbsion:wechat');
   // api.mainModule('wechat-tests.js');
 
-  api.use('sanjo:jasmine@0.14.0');
-  api.use('velocity:html-reporter@0.6.2');
-  api.use('hbsion:wechat');
+  // api.use('sanjo:jasmine@0.14.0');
+  // api.use('velocity:html-reporter@0.6.2');
+  // api.use('hbsion:wechat');
 
   api.addFiles('tests/server/collections/wechat_js_ticket_spec.js', 'server');
   api.addFiles('tests/server/collections/wechat_tokens_spec.js', 'server');
